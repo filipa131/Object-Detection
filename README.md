@@ -1,2 +1,1 @@
-# YOLO-intruder-detection
-Intruder Detection using YOLO
+# Object Detection
