@@ -2,16 +2,6 @@
 
 This project focuses on training a YOLO11n model to detect safety helmets and reflective jackets worn by individuals. The goal is to accurately identify whether a person is wearing a safety helmet and/or a reflective jacket using computer vision techniques.
 
-## Installation
-
-To run this project, you'll need to install the necessary dependencies:
-
-```bash
-pip install ultralytics
-pip install matplotlib
-pip install opencv-python
-```
-
 ## Dataset
 
 The dataset used in this project contains images of individuals wearing safety helmets and reflective jackets. The dataset has been split into three parts:
