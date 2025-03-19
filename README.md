@@ -68,4 +68,25 @@ After training for 10 epochs, the model achieved the following performance metri
 - **mAP50**: 94.5%
 - **mAP50-95**: 72.2%
 
-These results show that the model performs well in detecting both helmets and jackets, with a high precision and recall.
+## Video Processing
+
+After training the model, the next step is to evaluate its performance in real-world video streams. The model can detect individuals wearing safety helmets and reflective jackets in video footage. Here’s a breakdown of how the video processing works:
+
+1. **Input Video**: The script processes a video file where each frame is analyzed for person detection and safety equipment (helmet and jacket) detection.
+
+2. **Detecting People**: The model uses YOLO to identify people in each frame of the video. Detected bounding boxes around people are saved for further analysis.
+
+3. **Helmet and Jacket Detection**: For each detected person, the model checks if they are wearing a safety helmet and/or reflective jacket by cropping the person’s region of interest (ROI) and running the helmet/jacket YOLO model on it.
+
+4. **Tracking People**: The script tracks the same individual across multiple frames, using intersection-over-union (IoU) to match the current detections to previous ones. Each person is assigned a unique ID, and the helmet/jacket status is stored in a queue for each individual.
+
+5. **Detection Rules**: The model uses the **8/10 rule** to verify the consistency of detections. The idea behind the rule is that a single detection (such as detecting a helmet or jacket in one frame) is not enough to make a final decision about whether a person is consistently wearing a helmet or jacket. Instead, you look at the last 10 frames for each individual to decide whether the detection is consistent enough to change the status.
+
+    8/10 Rule Concept
+    If a person is detected wearing a helmet (or jacket), the rule ensures that the status (e.g., "Helmet" or "Jacket") isn't changed immediately if there is a small       fluctuation in the detection. The detection must remain consistent over a majority of the last 10 frames before the title is changed. In other words, the title        is only flipped from "Helmet" to "No Helmet" or "Jacket" to "No Jacket" if at least 8 of the last 10 detections support that change.
+
+6. **Handling Missing Detections**: If a person is not detected for more than three frames in a row, their tracking is deleted.
+
+7. **Bounding Boxes and Labels**: Bounding boxes are drawn around detected individuals, with labels indicating whether they are wearing a helmet, jacket, both, or neither.
+
+8. **Output Video**: The processed video with visualized detections is saved as an output video file.
