@@ -81,3 +81,7 @@ After training the model, the next step is to evaluate its performance in real-w
 8. **Bounding Boxes and Labels**: Bounding boxes are drawn around detected individuals, with labels indicating whether they are wearing a helmet, jacket, both, or neither.
 
 9. **Output Video**: The processed video with visualized detections is saved as an output video file.
+
+# DEMO VIDEO:
+
+https://github.com/user-attachments/assets/7cdef876-36b5-4f80-88de-2c82945547a5
