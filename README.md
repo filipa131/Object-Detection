@@ -82,11 +82,12 @@ After training the model, the next step is to evaluate its performance in real-w
 
 5. **Detection Rules**: The model uses the **8/10 rule** to verify the consistency of detections. The idea behind the rule is that a single detection (such as detecting a helmet or jacket in one frame) is not enough to make a final decision about whether a person is consistently wearing a helmet or jacket. Instead, you look at the last 10 frames for each individual to decide whether the detection is consistent enough to change the status.
 
-    8/10 Rule Concept
-    If a person is detected wearing a helmet (or jacket), the rule ensures that the status (e.g., "Helmet" or "Jacket") isn't changed immediately if there is a small       fluctuation in the detection. The detection must remain consistent over a majority of the last 10 frames before the title is changed. In other words, the title        is only flipped from "Helmet" to "No Helmet" or "Jacket" to "No Jacket" if at least 8 of the last 10 detections support that change.
+    8/10 Rule Concept:
+   
+    If a person is detected wearing a helmet (or jacket), the rule ensures that the status (e.g., "Helmet" or "Jacket") isn't changed immediately if there is a small      fluctuation in the detection. The detection must remain consistent over a majority of the last 10 frames before the title is changed. In other words, the title        is only flipped from "Helmet" to "No Helmet" or "Jacket" to "No Jacket" if at least 8 of the last 10 detections support that change.
 
-6. **Handling Missing Detections**: If a person is not detected for more than three frames in a row, their tracking is deleted.
+7. **Handling Missing Detections**: If a person is not detected for more than three frames in a row, their tracking is deleted.
 
-7. **Bounding Boxes and Labels**: Bounding boxes are drawn around detected individuals, with labels indicating whether they are wearing a helmet, jacket, both, or neither.
+8. **Bounding Boxes and Labels**: Bounding boxes are drawn around detected individuals, with labels indicating whether they are wearing a helmet, jacket, both, or neither.
 
-8. **Output Video**: The processed video with visualized detections is saved as an output video file.
+9. **Output Video**: The processed video with visualized detections is saved as an output video file.
