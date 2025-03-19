@@ -11,7 +11,7 @@ The dataset used in this project contains images of individuals wearing safety h
 - **Test**: Test images (used to evaluate the trained model)
 
 You can access the dataset from Kaggle:
-[Safety Helmet and Reflective Jacket Dataset]([https://www.kaggle.com/datasets/xxxxx](https://www.kaggle.com/datasets/niravnaik/safety-helmet-and-reflective-jacket))
+[Safety Helmet and Reflective Jacket Dataset]([[https://www.kaggle.com/datasets/xxxxx](https://www.kaggle.com/datasets/niravnaik/safety-helmet-and-reflective-jacket)](https://www.kaggle.com/datasets/niravnaik/safety-helmet-and-reflective-jacket))
 
 ### Dataset Structure
 
